@@ -8,15 +8,15 @@
   <link rel="dns-prefetch" href="http://example.com">
   <title>python基础 | fireowl</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1. 列表操作">
+  <meta name="description" content="1. 格式操作">
 <meta property="og:type" content="article">
 <meta property="og:title" content="python基础">
 <meta property="og:url" content="http://example.com/2021/12/04/python%E5%9F%BA%E7%A1%80/index.html">
 <meta property="og:site_name" content="fireowl">
-<meta property="og:description" content="1. 列表操作">
+<meta property="og:description" content="1. 格式操作">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-12-04T05:17:45.000Z">
-<meta property="article:modified_time" content="2021-12-04T05:22:37.996Z">
+<meta property="article:modified_time" content="2021-12-05T11:47:54.133Z">
 <meta property="article:author" content="fireowl">
 <meta name="twitter:card" content="summary">
   
@@ -174,7 +174,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">1.2k字</span>
+        <span class="post-count">1.5k字</span>
       </span>
     </span>
 
@@ -183,7 +183,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-hourglass-half"></i>
         <span class="post-meta-item-text">  阅读时长: </span>
-        <span class="post-count">4分</span>
+        <span class="post-count">5分</span>
       </span>
     </span>
 </div>
@@ -195,7 +195,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="1-列表操作"><a href="#1-列表操作" class="headerlink" title="1. 列表操作"></a>1. 列表操作</h3><span id="more"></span>
+        <h3 id="1-格式操作"><a href="#1-格式操作" class="headerlink" title="1. 格式操作"></a>1. 格式操作</h3><span id="more"></span>
+
 <table>
 <thead>
 <tr>
@@ -432,6 +433,16 @@
 <td>将列表或元组中的字符串合并成一个字符串</td>
 </tr>
 </tbody></table>
+<h3 id="2-函数整理"><a href="#2-函数整理" class="headerlink" title="2.函数整理"></a>2.函数整理</h3><!-- more -->
+<blockquote>
+<p>函数形参的应用：*args (可变得位置形参, 传入后转成 元组形式 tuple())</p>
+</blockquote>
+<blockquote>
+<p><strong>args  (个数可变的</strong>关键字** 形参，传入后转成 字典格式dict())</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fun</span>(<span class="params">a,b=<span class="number">10</span></span>):</span>  <span class="comment">#b是在函数的定义处，所以b是形参，而且进行了赋值，所以b称为默认值形参</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;a=&#x27;</span>,a)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;b=&#x27;</span>,b)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fun2</span>(<span class="params">*args</span>):</span>  <span class="comment">#个数可变的位置形参</span></span><br><span class="line">    <span class="built_in">print</span>(args)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fun3</span>(<span class="params">**args2</span>):</span> <span class="comment">#个数可变的关键字形参</span></span><br><span class="line">    <span class="built_in">print</span>(args2)</span><br><span class="line"></span><br><span class="line">fun2(<span class="number">10</span>,<span class="number">20</span>,<span class="number">30</span>,<span class="number">40</span>)</span><br><span class="line">fun3(a=<span class="number">11</span>,b=<span class="number">22</span>,c=<span class="number">33</span>,d=<span class="number">44</span>,e=<span class="number">55</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fun4</span>(<span class="params">a,b,*,c,d</span>):</span>   <span class="comment">#从*之后的参数，在函数调用时，只能采用关键字参数传递</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;a=&#x27;</span>,a)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;b=&#x27;</span>, b)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;c=&#x27;</span>, c)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;d=&#x27;</span>, d)</span><br><span class="line"></span><br><span class="line"><span class="comment">#调用fun4函数</span></span><br><span class="line"><span class="comment">#fun4(10,20,30,40)  #位置实参传递</span></span><br><span class="line">fun4(a=<span class="number">10</span>,b=<span class="number">20</span>,c=<span class="number">30</span>,d=<span class="number">40</span>) <span class="comment">#关键字实参传递</span></span><br><span class="line">fun4(<span class="number">10</span>,<span class="number">20</span>,c=<span class="number">30</span>,d=<span class="number">40</span>)  <span class="comment">#前两个参数，采用的是位置实参传递，而c,d采用的是关键字实参传递</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;需求，  c,d只能采用关键字实参传递&#x27;&#x27;&#x27;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;函数定义时的形参的顺序问题&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fun5</span>(<span class="params">a,b,*,c,d,**args</span>):</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fun6</span>(<span class="params">*args,**args2</span>):</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fun7</span>(<span class="params">a,b=<span class="number">10</span>,*args,**args2</span>):</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
+
+
 
       
 
